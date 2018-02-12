@@ -1,0 +1,365 @@
+/*(C) 2017 Erin Du, All Rights Reserved.*/
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-image: url("../images/fujinraijin.jpg");
+    background-size: 1400px;
+    background-attachment: fixed;
+    font-size: 24px;
+    font-family: 'Jim Nightshade', cursive;
+    color: white;
+    overflow: hidden;
+}
+header {
+    width: 100%;
+    height: 90px;
+    background-image: url("../images/blue.jpg");
+    opacity: 0.8;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+    background-image: url("../images/blue.jpg");
+    opacity: 0.8;
+    border-top: 1px solid rgba(0,0,0,0.3);
+    display: flex;
+}
+.main-container {
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.button {
+    font-size: 40px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+#menu {
+    width: 80%;
+    height: 700px;
+    margin: auto;
+    padding: 10px;
+    background-color: rgba(255,241,207,1);
+    border: 50px solid transparent;
+    border-image: url("../images/blue.jpg") 30 round;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    font-size: 30px;
+}
+#highscore {
+    width: 80%;
+    height: 700px;
+    margin: auto;
+    padding: 10px;
+    background-color: rgba(255,241,207,1);
+    border: 50px solid transparent;
+    border-image: url("../images/blue.jpg") 30 round;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    font-size: 50px;
+    font-family: 'Acme', sans-serif;
+    text-shadow: -1px 1px 0 rgba(255, 255, 255, 50);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    word-wrap: break-word;
+}
+.highscore-board {
+    display: inline-block;
+}
+#instruction {
+    width: 80%;
+    height: 700px;
+    margin: auto;
+    padding: 10px;
+    background-color: rgba(255,241,207,1);
+    border: 50px solid transparent;
+    border-image: url("../images/blue.jpg") 30 round;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Acme', sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    word-wrap: break-word;
+}
+#instruction p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+h1 {
+    font-size: 50px;
+}
+h2 {
+    display: inline-block;
+    margin-bottom: 1em;
+    font-size: 40px;
+}
+
+#menu .button{
+    font-size: 50px;
+}
+#main-title-logo {
+    width: 440px;
+    height: 140px;
+    margin: 30px auto 20px auto;
+    background-image: url("../images/battleninja_logo_black.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.toranomaki {
+    height: 220px;
+    width: 180px;
+    margin: auto;
+    background-image: url("../images/makimono_toranomaki.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    color: #000;
+    cursor: pointer;
+}
+#title-logo {
+    position: absolute;
+    top: 0px;
+    left:50%;
+    margin-left: -120px;
+    width: 240px;
+    height: 70px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-image: url("../images/battleninja_1425.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.sound-controller {
+    position: absolute;
+    top:7px;
+    left: 7px;
+    width: 60px;
+    height: 60px;
+    background-image: url("../images/sound.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    z-index: 2;
+}
+.sound-controller.off {
+    background-image: url("../images/sound_off.png");
+}
+#game-area {
+    width: 500px;
+    height: auto;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+#game-area > * {
+    margin: auto;
+}
+#game-area table {
+    border: 1px solid #ccc;
+}
+#game-area td {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+}
+#game-area .field {
+    background-color: rgba(255,255,255,0.5);
+}
+#game-area .field.before:hover {
+    background-image: url("../images/aim.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#game-area .field.after {
+    background-image: url("../images/shuriken.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#game-area .field.after.hit {
+    background-image: url("../images/shuriken-hit.png");
+    background-size: contain;
+}
+.dialog {
+    z-index: 99;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    height: 25%;
+    width: 50%;
+    padding: 5px;
+    background-color: rgba(255,241,207,0.9);
+    border: 30px solid transparent;
+    border-image: url("../images/blue.jpg") 30 round;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+}
+.dialog p {
+    margin-top: 15px;
+    font-size: 50px;
+}
+.overlay{
+    z-index:98;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:120%;
+	background-color:rgba(0,0,0,0.75);
+}
+.gameover {
+    background-image: url("../images/bakuhatsu.png");
+    background-size: 600px;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+.win {
+    background-image: url("../images/ninja_hashiru.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+.replay-button {
+    display: inline-block;
+}
+.cancel-button {
+    margin-left: 100px;
+    display: inline-block;
+}
+#ninja-info-bar {
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    color: #FFF;
+}
+.ninja-shadow {
+    width: 40px;
+    height: 82px;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+    padding-left: 33px;
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#ninja-0 {
+    background-image: url("../images/ninja_s1.png");
+    background-size: 22px;
+}
+#ninja-1 {
+    background-image: url("../images/ninja_s2.png");
+    background-size: 40px;
+}
+#ninja-2 {
+    background-image: url("../images/ninja_s3.png");
+    background-size: 30px;
+}
+#ninja-3 {
+    background-image: url("../images/ninja_s4.png");
+    background-size: 35px;
+}
+#ninja-4 {
+    background-image: url("../images/ninja_s5.png");
+    background-size: 33px;
+}
+.ninja-shadow.hit{
+    background-image: url("../images/shuriken-hit.png") !important;
+}
+.turn-info {
+    position: absolute;
+    left: 49%;
+    width: 50px;
+    display: flex;
+    color: black;
+    font-size: 30px;
+}
+.turn-shuriken {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/turn-shuriken.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@media screen and (max-width: 480px) {
+    body {
+      background-size: contain;
+    }
+}
+@media screen and (min-width: 768px) {
+    body {
+      background-size: contain;
+    }
+    #game-area {
+        width: 768px;
+    }
+    #game-area td {
+        width: 55px;
+        height: 55px;
+    }
+}
+@media screen and (min-width: 992px) {
+    #game-area {
+        width: 992px;
+    }
+    #game-area td {
+        width: 60px;
+        height: 60px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .ninja-charactor {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 2;
+    }
+    .bad-ninja {
+        left: 10px;
+        top: 250px;
+        background-image: url("../images/ninja_bad_dog.png");
+    }
+    .good-ninja {
+        right: 10px;
+        top: 270px;
+        background-image: url("../images/ninja_syuriken_man.png");
+    }
+    #game-area {
+        width: 1200px;
+    }
+    #game-area td {
+        width: 60px;
+        height: 60px;
+    }
+}
+.shade {
+    box-shadow: 0px 3px 25px rgba(0,0,0,0.9);
+}
+
+.hide {
+    display: none !important;
+}

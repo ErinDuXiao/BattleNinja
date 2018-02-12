@@ -1,0 +1,111 @@
+<!--(C) 2017 Erin Du, All Rights Reserved.-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Battle Ninja</title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Jim+Nightshade" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=1.0">
+</head>
+
+<body class="main-container">
+    <div class="sound-controller"></div>
+
+    <div id="menu" class="shade">
+        <div id="main-title-logo"></div>
+        <p>
+            Bad ninja troops are hiding!
+            <br>
+            Find them from the picture by throwing shuriken!!
+        </p>
+        <div id="single-game" class="button">
+            PLAY
+        </div>
+
+        <div id="show-highscore" class="button">
+            HIGH SCORE
+        </div>
+
+        <div id="show-instruction" class="toranomaki">
+            Instruction
+        </div>
+    </div>
+    <div id="instruction" class="shade hide">
+        <div id="main-title-logo"></div>
+        <h1>
+            How to play?
+        </h1>
+        <p>
+            <h2>Goal:</h2>
+            Defeat all of the bad ninja!
+        </p>
+        <p>
+            There are 5 ninja hiding in the picture.
+            <br>
+            Guess their location and shoot shuriken by clicking on a cell of the gameboard!
+            <br><br>
+            <ol>
+                <li>Hint 1: Ninja can hide horizontally or vertically.</li>
+                <li>Hint 2: Each ninja's height is different.</li>
+            </ol>
+        </p>
+        <div class="button return-menu">
+            Return
+        </div>
+    </div>
+    <div id="highscore" class="shade hide">
+        <div id="main-title-logo"></div>
+        <p>
+            Your Recorded Highscore
+            <p class="highscore-board"></p>
+        </p>
+        <br>
+        <div class="button return-menu">
+            Return
+        </div>
+    </div>
+    <div id="game-page" class="game-page hide">
+        <header></header>
+        <div id="title-logo"></div>
+        <div class="main-container">
+            <div id="game-area"></div>
+            <div class="turn-info">
+                <div class="turn-shuriken"></div>
+                <span id="turn-num"></span>
+            </div>
+            <div class="ninja-charactor bad-ninja">
+            </div>
+            <div class="ninja-charactor good-ninja">
+            </div>
+        </div>
+        <footer>
+            <div id="ninja-info-bar">
+                <div id="ninja-0" class="ninja-shadow"><p>× 5</p></div>
+                <div id="ninja-1" class="ninja-shadow"><p>× 4</p></div>
+                <div id="ninja-2" class="ninja-shadow"><p>× 4</p></div>
+                <div id="ninja-3" class="ninja-shadow"><p>× 3</p></div>
+                <div id="ninja-4" class="ninja-shadow"><p>× 2</p></div>
+            <div>
+        </footer>
+    </div>
+    <div class="dialog gameover shade hide">
+        <p>DEFEAT</p>
+        <div class="button replay-button">Replay</div>
+        <div class="button return-menu">Cancel</div>
+    </div>
+    <div class="dialog win shade hide">
+        <p>VICTORY</p>
+        <p class="message"></p>
+        <div class="button replay-button">Replay</div>
+        <div class="button return-menu">Cancel</div>
+    </div>
+    <div class="overlay hide"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.0/buzz.min.js"></script>
+    <script src="scripts/Utils.js"></script>
+    <script src="scripts/AppSoundManager.js"></script>
+    <script src="scripts/Ship.js"></script>
+    <script src="scripts/App.js" defer></script>
+</body>
+</html>
